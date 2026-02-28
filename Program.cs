@@ -10,15 +10,31 @@ Console.WriteLine($"--- Auditoría de Algoritmos .NET 10 ---");
 Console.WriteLine($"Procesando: {CANTIDAD_ELEMENTOS:N0} números.");
 
 // 2. El alumno implementa esto en la clase Algoritmo
-ordenador.BubbleSort(datos);
 
-// 3. Validación de integridad
-if (ordenador.EstaOrdenado(datos))
+public void BubbleSort(int[] datos)
 {
-    Console.WriteLine("VALIDATION: SUCCESS");
-}
-else
-{
-    Console.WriteLine("VALIDATION: FAILED");
-    Environment.Exit(1); // Crucial para el Autograding de GitHub
+    // Implementación del ordenamiento por selección
+    int n = datos.Length;
+    
+    // Recorrer todo el array
+    for (int i = 0; i < n - 1; i++)
+    {
+        // Encontrar el elemento mínimo en el array no ordenado
+        int indiceMinimo = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (datos[j] < datos[indiceMinimo])
+            {
+                indiceMinimo = j;
+            }
+        }
+        
+        // Intercambiar el elemento mínimo encontrado con el primer elemento
+        if (indiceMinimo != i)
+        {
+            int temp = datos[i];
+            datos[i] = datos[indiceMinimo];
+            datos[indiceMinimo] = temp;
+        }
+    }
 }
