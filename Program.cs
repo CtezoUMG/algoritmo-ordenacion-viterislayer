@@ -11,6 +11,8 @@ Console.WriteLine($"Procesando: {CANTIDAD_ELEMENTOS:N0} números.");
 
 // 2. El alumno implementa esto en la clase Algoritmo
 
+
+// 2. El alumno implementa esto en la clase Algoritmo
 public void BubbleSort(int[] datos)
 {
     // Implementación del ordenamiento por selección
